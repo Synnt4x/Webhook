@@ -52,6 +52,8 @@ app.post('/discordbot', function(req, res) {
     console.log('Restarting the Bot...');
     exec('pm2 restart 0', execCallback);
 
+    res.sendStatus(200);
+
 });
 
 app.listen(5000, function() {
