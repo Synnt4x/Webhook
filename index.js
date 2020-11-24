@@ -54,9 +54,9 @@ app.post('/discordbot', function(req, res) {
 
 });
 
-app.listen(5000, function() {
+app.listen(80, function() {
     var time = new Date().toLocaleString();
-    console.log('Today is the: ' + time + ' - And we are listening on port 5000')
+    console.log('Today is the: ' + time + ' - And we are listening on port 80')
 });
 
 function execCallback(err, stdout, stderr) {
