@@ -46,8 +46,11 @@ app.post('/discordbot', function(req, res) {
     // now pull down the latest
     exec('git -C ' + pathToRepo + ' pull -f', execCallback);
 
-    // and npm install with --production
-    exec('npm -C ' + pathToRepo + ' --production', execCallback);
+    // and npm udate
+    exec('npm ' + pathToRepo + ' update', execCallback);
+
+    // as well as install, just to be sure
+    exec('npm ' + pathToRepo + ' install', execCallback);
 
     console.log('Restarting the Bot...');
     exec('pm2 restart 0', execCallback);
