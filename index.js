@@ -1,17 +1,16 @@
 var path = require('path');
 var express = require('express');
-var bodyParser = require('body-parser');
 var app = express();
 var exec = require('child_process').exec;
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(function(req, res, next) {
     var ip = req.headers['x-forwarded-for'] ||
-        req.connection.remoteAddress ||
         req.socket.remoteAddress ||
-        (req.connection.socket ? req.connection.socket.remoteAddress : null);
+        req.socket.remoteAddress ||
+        (req.socket ? req.socket.remoteAddress : null);
     var currentTime = new Date().toLocaleString();
     console.log("The IP of the requestor is - " + ip + ' CURRENT TIME: ' + currentTime);
     next();
@@ -46,7 +45,7 @@ app.post('/discordbot', function(req, res) {
     // now pull down the latest
     exec('git -C ' + pathToRepo + ' pull -f', execCallback);
 
-    // and npm udate
+    // and npm update
     exec('npm ' + pathToRepo + ' update', execCallback);
 
     // as well as install, just to be sure
