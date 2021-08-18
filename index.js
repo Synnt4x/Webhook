@@ -3,6 +3,17 @@ var express = require('express');
 var app = express();
 var exec = require('child_process').exec;
 
+var https = require('https');
+var fs = require('fs');
+
+var https_options = {
+    //key: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\gondor.zapto.org-private.key'),
+    key: fs.readFileSync('/GitHub/Credentials/SSL-Cert/gondor.zapto.org-private.key'),
+    //cert: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\gondor_zapto_org.pem-chain'),
+    cert: fs.readFileSync('GitHub/Credentials/SSL-Cert/gondor_zapto_org.pem-chain'),
+    ciphers: "DEFAULT:!SSLv2:!RC4:!EXPORT:!LOW:!MEDIUM:!SHA1"
+};
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -19,6 +30,8 @@ app.use(function(req, res, next) {
 var htmlPath = path.join(__dirname, '/html');
 app.use(express.static(htmlPath));
 
+var httpsServer = https.createServer(https_options, app);
+httpsServer.listen(5443);
 
 app.get('/discordbot', function(req, res) {
     res.sendStatus(200);
