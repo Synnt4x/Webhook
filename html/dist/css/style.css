@@ -1523,7 +1523,7 @@ label {
     width: 64%;
     height: 73.7%;
     -webkit-transform: perspective(500px) rotateY(-15deg) rotateX(8deg) rotateZ(-1deg);
-    transform: perspective(500px) rotateY(-15deg) rotateX(8deg) rotateZ(-1deg)
+    transform: perspective(500px) rotateY(-15deg) rotateX(8deg) rotateZ(-1deg);
 }
 
 .hero-figure-box-06 {
@@ -1986,4 +1986,40 @@ main {
 #discord-button {
     margin-top: 10px;
     margin-left: 5px;
+}
+
+#apex-logo {
+    background: url("https://ih1.redbubble.net/image.887066031.8515/flat,750x1000,075,f.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#rocket-league-logo {
+    background: url("https://image.api.playstation.com/cdn/EP2002/CUSA01433_00/vMT43JO2Pr5JZBP1jSjw6VhQgOeC5mXZ.png?w=960&h=960") no-repeat;
+    background-size: contain;
+}
+
+#csgo-logo {
+    background: url("https://seeklogo.com/images/C/csgo-logo-CAA0A4D48A-seeklogo.com.png") no-repeat;
+    background-size: contain;
+}
+
+#valorant-logo {
+    background: url("https://studio.cults3d.com/4QqRV9kLYYEuw9ur_X3yjQl1sjk=/516x516/https://files.cults3d.com/uploaders/15024335/illustration-file/a86d53e4-2bd9-4a8f-9550-986686c3131a/gi0mAjIh_400x400.png") no-repeat;
+    background-size: contain;
+}
+
+#minecraft-logo {
+    background: url("https://thumbs.dreamstime.com/b/minecraft-vector-logo-minecraft-game-d-vector-logo-illustration-isolated-black-transparent-banner-background-can-be-used-164068992.jpg") no-repeat;
+    background-size: contain;
+}
+
+#valheim-logo {
+    background: url("https://cdna.artstation.com/p/assets/images/images/035/786/380/large/rami-m-valheim-logo.jpg?1615901755") no-repeat;
+    background-size: contain;
+}
+
+#new-world-logo {
+    background: url("https://scontent-frt3-1.xx.fbcdn.net/v/t1.6435-9/184633882_483512873098386_2000014930952078920_n.png?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=jxkh6RUzA3AAX8xMAkb&_nc_ht=scontent-frt3-1.xx&oh=e6a6e3e799677dd9458b0aff54a54a13&oe=614779BD") no-repeat;
+    background-size: contain;
 }
