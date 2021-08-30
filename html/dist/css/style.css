@@ -1499,7 +1499,7 @@ label {
     top: -8%;
     width: 45.45%;
     height: 60.60%;
-    background: linear-gradient(to left top, #0270D7, rgba(2, 112, 215, 0));
+    background: linear-gradient(to left top, #1c1c1d, rgba(2, 112, 215, 0));
     -webkit-transform: rotateZ(-135deg);
     transform: rotateZ(-135deg)
 }
@@ -1563,15 +1563,15 @@ label {
 .hero-figure-box-09 {
     left: 42.6%;
     top: -17.9%;
-    width: 6.63%;
-    height: 8.83%;
+    width: 20.83%;
+    height: 21.83%;
     background: #00BFFB;
     -webkit-transform: rotateZ(-52deg);
     transform: rotateZ(-52deg)
 }
 
 .hero-figure-box-09::before {
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.64) 100%);
+    /*background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.64) 100%);*/
     -webkit-transform: rotateZ(45deg) scale(1.5);
     transform: rotateZ(45deg) scale(1.5)
 }
