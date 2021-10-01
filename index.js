@@ -50,19 +50,19 @@ app.post('/discordbot', function(req, res) {
     console.log('> Pulling code from GitHub... <');
 
     // reset any changes that have been made locally
-    exec('git -C ' + pathToRepo + ' reset --hard', execCallback);
+    // exec('git -C ' + pathToRepo + ' reset --hard', execCallback);
 
     // and ditch any files that have been added locally too
-    exec('git -C ' + pathToRepo + ' clean -df', execCallback);
+    // exec('git -C ' + pathToRepo + ' clean -df', execCallback);
 
     // now pull down the latest
     exec('git -C ' + pathToRepo + ' pull -f', execCallback);
 
     // and npm update
-    exec('npm ' + pathToRepo + ' update', execCallback);
+    // exec('npm ' + pathToRepo + ' update', execCallback);
 
     // as well as install, just to be sure
-    exec('npm ' + pathToRepo + ' install', execCallback);
+    // exec('npm ' + pathToRepo + ' install', execCallback);
 
     console.log('Restarting the Bot...');
     exec('pm2 restart 0', execCallback);
