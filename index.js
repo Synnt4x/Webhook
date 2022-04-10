@@ -3,14 +3,16 @@ var express = require('express');
 var app = express();
 var exec = require('child_process').exec;
 
+const dns = require("dns");
+
 var https = require('https');
 var fs = require('fs');
 
 var https_options = {
-    //key: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\gondor.zapto.org-private.key'),
-    key: fs.readFileSync('/GitHub/Credentials/SSL-Cert/gondor.zapto.org-private.key'),
-    //cert: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\gondor_zapto_org.pem-chain'),
-    cert: fs.readFileSync('/GitHub/Credentials/SSL-Cert/gondor_zapto_org.pem-chain'),
+    key: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\gondor.zapto.org-private.key'),
+    // key: fs.readFileSync('/GitHub/Credentials/SSL-Cert/gondor.zapto.org-private.key'),
+    cert: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\gondor_zapto_org.pem-chain'),
+    // cert: fs.readFileSync('/GitHub/Credentials/SSL-Cert/gondor_zapto_org.pem-chain'),
     ciphers: "DEFAULT:!SSLv2:!RC4:!EXPORT:!LOW:!MEDIUM:!SHA1"
 };
 
@@ -23,7 +25,18 @@ app.use(function(req, res, next) {
         req.socket.remoteAddress ||
         (req.socket ? req.socket.remoteAddress : null);
     var currentTime = new Date().toLocaleString();
-    console.log("The IP of the requestor is - " + ip + ' CURRENT TIME: ' + currentTime);
+    dns.resolve4("dumpyfruit.servegame.com", { ttl: true }, (err, ownIP) => {
+        // if any err - log to console
+        if (err) {
+            console.log(err);
+            return;
+        }
+        // otherwise show the first IPv4 address
+        // from the array
+        if (ownIP[0] != ip) {
+            console.log("The IP of the requestor is - " + ip + ' CURRENT TIME: ' + currentTime);
+        }
+    });
     next();
 });
 
