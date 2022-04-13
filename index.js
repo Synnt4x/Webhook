@@ -9,10 +9,10 @@ var https = require('https');
 var fs = require('fs');
 
 var https_options = {
-    //key: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\gondor.zapto.org-private.key'),
-    key: fs.readFileSync('/GitHub/Credentials/SSL-Cert/gondor.zapto.org-private.key'),
-    //cert: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\gondor_zapto_org.pem-chain'),
-    cert: fs.readFileSync('/GitHub/Credentials/SSL-Cert/gondor_zapto_org.pem-chain'),
+    // key: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\dumpyfruit_servegame_com.key'),
+    key: fs.readFileSync('/GitHub/Credentials/SSL-Cert/dumpyfruit_servegame_com.key'),
+    // cert: fs.readFileSync('C:\\Users\\Enermax\\Documents\\GitHub\\Credentials\\SSL-Cert\\dumpyfruit_servegame_com.pem-chain'),
+    cert: fs.readFileSync('/GitHub/Credentials/SSL-Cert/dumpyfruit_servegame_com.pem-chain'),
     ciphers: "DEFAULT:!SSLv2:!RC4:!EXPORT:!LOW:!MEDIUM:!SHA1"
 };
 
